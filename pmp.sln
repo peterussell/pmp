@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "api\API.csproj", "{9FD88554-94A1-45BD-9CB0-EC505C11D2F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "src\api\API.csproj", "{9FD88554-94A1-45BD-9CB0-EC505C11D2F9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1F484E26-179E-44C3-87A5-BB3A8E239AD0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain.csproj", "{F576D9B4-F5BA-498C-BD24-225B1FEA51DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{567935B3-C5C8-4E78-BCA7-0327D9622793}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "src\Persistence\Persistence.csproj", "{567935B3-C5C8-4E78-BCA7-0327D9622793}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
