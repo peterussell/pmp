@@ -1,12 +1,16 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER app
-WORKDIR /app
-EXPOSE 8080
-EXPOSE 8081
+
+#USER app
+#WORKDIR /app
+
+# Set listening URLs/port
+#EXPOSE 8080
+#ENV ASPNETCORE_URLS=http://+:8080
 
 # Copy .csproj and do restore as separate layer for performance
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR .
+WORKDIR /app
+# WORKDIR .
+
 COPY ["api/API.csproj", "api/"]
 COPY ["Domain/Domain.csproj", "Domain/"]
 COPY ["Persistence/Persistence.csproj", "Peristence/"]
@@ -14,14 +18,15 @@ RUN dotnet restore "api/API.csproj"
 RUN dotnet restore "Domain/Domain.csproj"
 RUN dotnet restore "Peristence/Persistence.csproj"
 
-# Restore layer passed, copy the remaining files and build
-COPY ./ ./
-RUN dotnet build "api/API.csproj" -c Release -o /app/build
+COPY . .
 
-FROM build AS publish
-RUN dotnet publish "api/API.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "api/API.csproj" -c Release -o out
 
-FROM base AS final
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app/out ./
+
+ENV ASPNETCORE_URLS=http://+:8080
+EXPOSE 8080
+
 ENTRYPOINT ["dotnet", "API.dll"]

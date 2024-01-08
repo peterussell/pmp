@@ -4,15 +4,14 @@ using Microsoft.AspNetCore.Mvc;
 namespace api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class FlightController : ControllerBase
+    [Route("v1/[controller]")]
+    public class FlightsController : ControllerBase
     {
-
-        private readonly ILogger<FlightController> _logger;
+        private readonly ILogger<FlightsController> _logger;
 
         private readonly IFlightRepository _flightRepository;
 
-        public FlightController(ILogger<FlightController> logger, IFlightRepository flightRepository)
+        public FlightsController(ILogger<FlightsController> logger, IFlightRepository flightRepository)
         {
             _logger = logger;
             _flightRepository = flightRepository;
