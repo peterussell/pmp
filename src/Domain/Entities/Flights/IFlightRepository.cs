@@ -1,4 +1,4 @@
-﻿namespace Domain.Flights;
+﻿namespace Domain.Entities.Flights;
 
 public interface IFlightRepository
 {

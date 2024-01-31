@@ -1,6 +1,6 @@
-﻿using Domain.Points;
+﻿using Domain.Entities.Points;
 
-namespace Domain.Flights;
+namespace Domain.Entities.Flights;
 
 public class Flight
 {

@@ -1,4 +1,4 @@
-using Domain.Flights;
+using Domain.Entities.Flights;
 using Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
