@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY ["api/API.csproj", "api/"]
 COPY ["Domain/Domain.csproj", "Domain/"]
-COPY ["Persistence/Persistence.csproj", "Peristence/"]
+COPY ["Persistence/Persistence.csproj", "Persistence/"]
 RUN dotnet restore "api/API.csproj"
 RUN dotnet restore "Domain/Domain.csproj"
-RUN dotnet restore "Peristence/Persistence.csproj"
+RUN dotnet restore "Persistence/Persistence.csproj"
 
 COPY . .
 RUN dotnet publish "api/API.csproj" -c Release -o out
