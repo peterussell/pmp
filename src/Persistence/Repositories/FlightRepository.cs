@@ -1,5 +1,5 @@
-﻿using Domain.Flights;
-using Domain.Points;
+﻿using Domain.Entities.Flights;
+using Domain.Entities.Points;
 
 namespace Persistence.Repositories;
 

@@ -1,4 +1,4 @@
-﻿namespace Domain.Points;
+﻿namespace Domain.Entities.Points;
 
 public abstract class Navaid : Point
 {

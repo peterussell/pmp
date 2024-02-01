@@ -1,4 +1,4 @@
-using Domain.Flights;
+using Domain.Entities.Flights;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers
